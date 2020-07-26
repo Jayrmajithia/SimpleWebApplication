@@ -1,4 +1,4 @@
-# Lyft Interview, Simple Web Application
+# Lyft apprenticeship, Simple Web Application
 
 I created a simple web applications where it has following end points and it would return the result as provided below using on your localhost.
 
