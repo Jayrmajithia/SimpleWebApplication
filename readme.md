@@ -17,10 +17,10 @@ this is the root page with a message of ```Welcome to the index page for Lyft ap
 ## url/hi
 this page will ask you a question ```Who are you?```
 
-## url/hi/<username>
+## url/hi/username
 this page will return with a messsage ```Hi there, {username} welcome to the Lyft apprenticeship application!```
 
-for example if username = Jay
+for example if username = ```Jay```
 it would return ```Hi there, Jay welcome to the Lyft apprenticeship application! ```
 
 ## url/test
