@@ -19,7 +19,7 @@ def test():
     req_data = request.get_json()
     try:
         if not req_data or "string_to_cut" not in req_data:
-            raise
+            raise Exception
         string_to_cut = req_data["string_to_cut"]
         i = 2
         res = ""
