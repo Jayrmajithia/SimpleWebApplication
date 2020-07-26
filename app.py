@@ -1,4 +1,4 @@
-from flask import Flask, request
+from flask import Flask, request, abort
 
 app = Flask(__name__)
 
@@ -17,12 +17,16 @@ def greet(username):
 @app.route("/test", methods=["POST"])
 def test():
     req_data = request.get_json()
-    if not req_data or not req_data["string_to_cut"]:
-        return {"Error":"Error No Json string found"}
-    string_to_cut = req_data["string_to_cut"]
-    i = 2
-    res = ""
-    while i < len(string_to_cut):
-        res += string_to_cut[i]
-        i += 3
-    return {"return_string":res}
+    try:
+        if not req_data or "string_to_cut" not in req_data:
+            raise
+        string_to_cut = req_data["string_to_cut"]
+        i = 2
+        res = ""
+        while i < len(string_to_cut):
+            res += string_to_cut[i]
+            i += 3
+        return {"return_string":res}
+    except:
+        print("Error No Json string found or Parameter is wrong")
+        abort(500)
